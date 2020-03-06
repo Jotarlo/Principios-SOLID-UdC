@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Contexto_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+          <Property Name="Document" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="30" />
+          <Property Name="MessageText" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Person__Document__1273C1CD">
+          <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Contexto_DBModelStoreContainer">
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="jal_db_user" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="jal_db_user" store:Type="Tables" />
+          <AssociationSet Name="FK__Person__Document__1273C1CD" Association="Self.FK__Person__Document__1273C1CD">
+            <End Role="DocumentType" EntitySet="DocumentType" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Contexto_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__Person__Document__1273C1CD" FromRole="DocumentType" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Document" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocumentType" Relationship="Self.FK__Person__Document__1273C1CD" FromRole="Person" ToRole="DocumentType" />
+        </EntityType>
+        <Association Name="FK__Person__Document__1273C1CD">
+          <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Charla_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <AssociationSet Name="FK__Person__Document__1273C1CD" Association="Self.FK__Person__Document__1273C1CD">
+            <End Role="DocumentType" EntitySet="DocumentType" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Contexto_DBModelStoreContainer" CdmEntityContainer="Charla_DBEntities">
+          <EntitySetMapping Name="DocumentType">
+            <EntityTypeMapping TypeName="Contexto_DBModel.DocumentType">
+              <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="Contexto_DBModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

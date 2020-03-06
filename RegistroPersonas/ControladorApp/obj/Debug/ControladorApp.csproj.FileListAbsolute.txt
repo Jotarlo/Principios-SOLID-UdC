@@ -1,0 +1,15 @@
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ControladorApp.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ControladorApp.pdb
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ContratosAccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ContratosControladorApp.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\WebApiContrib.Formatting.JavaScriptSerializer.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ContratosAccesoDatos.pdb
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\ContratosControladorApp.pdb
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\obj\Debug\ControladorApp.csprojAssemblyReference.cache
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\obj\Debug\ControladorApp.csproj.CopyComplete
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\obj\Debug\ControladorApp.dll
+C:\Users\pista\source\repos\RegistroPersonas\ControladorApp\obj\Debug\ControladorApp.pdb

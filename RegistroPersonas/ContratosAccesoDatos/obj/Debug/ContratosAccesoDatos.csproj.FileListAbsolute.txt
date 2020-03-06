@@ -1,0 +1,4 @@
+C:\Users\pista\source\repos\RegistroPersonas\ContratosAccesoDatos\bin\Debug\ContratosAccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\ContratosAccesoDatos\bin\Debug\ContratosAccesoDatos.pdb
+C:\Users\pista\source\repos\RegistroPersonas\ContratosAccesoDatos\obj\Debug\ContratosAccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\ContratosAccesoDatos\obj\Debug\ContratosAccesoDatos.pdb

@@ -1,0 +1,4 @@
+C:\Users\pista\source\repos\RegistroPersonas\ContratosControladorApp\bin\Debug\ContratosControladorApp.dll
+C:\Users\pista\source\repos\RegistroPersonas\ContratosControladorApp\bin\Debug\ContratosControladorApp.pdb
+C:\Users\pista\source\repos\RegistroPersonas\ContratosControladorApp\obj\Debug\ContratosControladorApp.dll
+C:\Users\pista\source\repos\RegistroPersonas\ContratosControladorApp\obj\Debug\ContratosControladorApp.pdb

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Charla_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__Person__Document__1273C1CD" FromRole="DocumentType" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Document" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DocumentType" Relationship="Self.FK__Person__Document__1273C1CD" FromRole="Person" ToRole="DocumentType" />
+  </EntityType>
+  <Association Name="FK__Person__Document__1273C1CD">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Charla_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" />
+    <EntitySet Name="Person" EntityType="Self.Person" />
+    <AssociationSet Name="FK__Person__Document__1273C1CD" Association="Self.FK__Person__Document__1273C1CD">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

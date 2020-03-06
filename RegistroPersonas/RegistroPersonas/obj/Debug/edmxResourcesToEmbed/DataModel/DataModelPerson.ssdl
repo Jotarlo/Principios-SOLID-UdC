@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Charla_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+    <Property Name="Document" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="MessageText" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__Person__Document__1273C1CD">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Charla_DBModelStoreContainer">
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="jal_db_user" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="jal_db_user" store:Type="Tables" />
+    <AssociationSet Name="FK__Person__Document__1273C1CD" Association="Self.FK__Person__Document__1273C1CD">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

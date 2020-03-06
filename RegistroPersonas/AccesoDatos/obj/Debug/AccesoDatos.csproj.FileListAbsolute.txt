@@ -1,0 +1,11 @@
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\AccesoDatos.dll.config
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\ContratosAccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\ContratosAccesoDatos.pdb
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\obj\Debug\AccesoDatos.csprojAssemblyReference.cache
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\pista\source\repos\RegistroPersonas\AccesoDatos\obj\Debug\AccesoDatos.pdb
